@@ -1,0 +1,72 @@
+<div class="container-fluid background darkTheme" [ngClass]="dark ? 'darkTheme' : 'lightTheme'">
+  <div class='row'>
+    <div class='col-xs-12 col-md-4 vh-100 d-flex align-items-center contentCard'>
+      <div class='col-xs-12 col-md-12 cardPurple d-flex flex-column justify-content-lg-between'>
+        <div class='col-md-12 col-xs-6'>
+          <div class='col-md-9 col-xs-12 cardFlag h6'>CEP</div>
+
+          <div class='col-md-9 col-xs-6 cardTitle h2'>Busque seu cep de forma rápida.</div>
+          <div class='col-md-7 col-xs-6 cardDescription'>Digite o campo CEP para preencher de forma automática os
+            demais campos</div>
+
+        </div>
+
+        <div class='col-md-12 col-xs-6 cardFooter text-right mb-4 text-md-center'>
+          <img class='imgLogo' src="../../../assets/images/logomarca-white.png" />
+        </div>
+      </div>
+    </div>
+    <div class='col-md-8 d-flex justify-content-center'>
+      <div class='col-md-11 d-flex justify-content-md-around flex-column'>
+        <div class='header'>
+          <h1 class='title'>Buscar CEP</h1>
+        </div>
+
+        <div class='formulario'>
+
+          <div class="col-md-6 d-flex flex-column mt-4">
+            <label for="inpcep" class='lblInput'>CEP</label>
+            <input id='inpcep' type="text" class='inputPadrao' [(ngModel)]="cep" (blur)="onBlur()"
+              placeholder='Digite o seu CEP' />
+            <div class="msgErr" *ngIf="err.bool == true">{{err.msg}}</div>
+          </div>
+          <div class='row'>
+            <div class="col-md-6 d-flex flex-column mt-4">
+              <label for="inplog" class='lblInput'>Logradouro</label>
+              <input id='inplog' class='inputPadrao' value={{endereco.logradouro}}
+                placeholder='Digite o seu logradouro' />
+            </div>
+
+            <div class="col-md-6 d-flex flex-column mt-4">
+              <label for="inpbrr" class='lblInput'>Bairro</label>
+              <input id='inpbrr' class='inputPadrao' value={{endereco.bairro}} placeholder='Digite o seu bairro' />
+            </div>
+
+            <div class="col-md-5 d-flex flex-column mt-4">
+              <label for="inpcid" class='lblInput'>Cidade</label>
+              <input id='inpcid' class='inputPadrao' value={{endereco.localidade}} placeholder='Digite a sua cidade' />
+            </div>
+
+            <div class="col-md-2 d-flex flex-column mt-4">
+              <label for="inpuf" class='lblInput'>UF</label>
+              <input id='inpuf' class='inputPadrao' value={{endereco.uf}} placeholder='Sua UF' />
+            </div>
+            <div class="col-md-5 d-flex flex-column mt-4">
+              <label for="inpcomp" class='lblInput'>Complemento</label>
+              <input id='inpcomp' class='inputPadrao' value={{endereco.complemento}}
+                placeholder='Digite o seu complemento' />
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div *ngIf="dark == true; else light">
+            <fa-icon [icon]="faSun" (click)="toggleTheme()"></fa-icon>
+          </div>
+          <ng-template #light>
+            <fa-icon [icon]="faMoon" (click)="toggleTheme()"></fa-icon>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

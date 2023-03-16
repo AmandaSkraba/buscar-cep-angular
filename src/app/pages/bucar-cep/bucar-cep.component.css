@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+}
+
+.darkTheme {
+  --color_title: #fff;
+  --color-texto__labelinput: #EEEEEE;
+  --color-placeholder: #8B8888;
+  --color-background: #1F1E1E;
+  --color-border-input: #E0E0E0;
+  --color-icon: #ffffff;
+}
+
+.lightTheme {
+  --color_title: #676767;
+  --color-texto__labelinput: #727272;
+  --color-placeholder: #9E9E9E;
+  --color-background: #FDFDFD;
+  --color-border-input: #ABABAB;
+  --color-icon: #676767;
+}
+
+
+.background {
+  background: var(--color-background) !important;
+}
+
+.cardPurple {
+  height: 95vh;
+  background: linear-gradient(180deg, #7884ED 0%, rgba(13, 25, 131, 0.83) 100%);
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.cardFlag {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 40px 25px;
+}
+
+.cardTitle {
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 0 25px;
+}
+
+.cardDescription {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  margin: 25px;
+}
+
+.imgLogo {
+  max-width: 77px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 36px;
+  color: var(--color_title);
+  margin-top: 65px;
+}
+
+.lblInput {
+  color: var(--color-texto__labelinput);
+}
+
+.inputPadrao {
+  background: transparent !important;
+  border: 0.5px solid var(--color-border-input);
+  border-radius: 5px;
+  padding: 7px;
+  color: var(--color-texto__labelinput);
+}
+
+.inputPadrao::placeholder {
+  color: var(--color-placeholder);
+}
+
+.inputPadrao:focus {
+  outline: none;
+  border: 0.5px solid #6D00F9;
+}
+
+.msgErr{
+  color: rgb(224, 30, 30);
+}
+
+svg {
+  height: 25px !important;
+  cursor: pointer;
+}
+
+path {
+  color: var(--color-icon);
+}
+
+@media screen and (max-width: 600px) {
+  .contentCard {
+    height: 65vh !important;
+  }
+
+  .cardPurple {
+    height: 60vh;
+    margin-top: 12px;
+  }
+
+  .title {
+    margin-top: 10px;
+    font-size: 25px !important;
+  }
+
+  .cardFooter {
+    margin-left: 25px;
+  }
+}
